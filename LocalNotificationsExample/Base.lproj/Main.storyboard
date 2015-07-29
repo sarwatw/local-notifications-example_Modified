@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="13F1077" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iMM-oo-ofK">
+                                <rect key="frame" x="152" y="415" width="297" height="30"/>
+                                <state key="normal" title="Schedule a notification in five seconds">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="notificationButtonTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ypt-cZ-8qw"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Local Notifications Example" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pF1-5s-VU3">
+                                <rect key="frame" x="16" y="20" width="568" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="akF-Pl-daC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="25"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" editable="NO" text="Permissions:" translatesAutoresizingMaskIntoConstraints="NO" id="flZ-PF-vCi">
+                                <rect key="frame" x="16" y="78" width="568" height="292"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="pF1-5s-VU3" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="HW8-tb-BpR"/>
+                            <constraint firstItem="pF1-5s-VU3" firstAttribute="leading" secondItem="flZ-PF-vCi" secondAttribute="leading" id="I2d-TH-5ct"/>
+                            <constraint firstItem="pF1-5s-VU3" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="a2o-xZ-dLL"/>
+                            <constraint firstItem="pF1-5s-VU3" firstAttribute="trailing" secondItem="flZ-PF-vCi" secondAttribute="trailing" id="b70-k5-0Z7"/>
+                            <constraint firstItem="flZ-PF-vCi" firstAttribute="top" secondItem="pF1-5s-VU3" secondAttribute="bottom" constant="8" symbolic="YES" id="ba2-DF-pIw"/>
+                            <constraint firstItem="pF1-5s-VU3" firstAttribute="centerX" secondItem="iMM-oo-ofK" secondAttribute="centerX" id="esc-wh-V9Z"/>
+                            <constraint firstItem="pF1-5s-VU3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="xS7-YE-A8e"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="permissionsView" destination="flZ-PF-vCi" id="EHN-q4-jcp"/>
+                        <segue destination="p4O-RS-bfD" kind="show" identifier="RequestPermissionsSegue" id="6A4-pB-UXL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="qiQ-VI-Zjo" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="129" y="131"/>
+        </scene>
+        <!--Permissions Request View Controller-->
+        <scene sceneID="JvG-Ez-z7w">
+            <objects>
+                <viewController id="p4O-RS-bfD" customClass="PermissionsRequestViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="49v-D9-Z1m"/>
+                        <viewControllerLayoutGuide type="bottom" id="BAU-fE-F4O"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5O3-tS-EaL">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Permissions Request" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AcN-nX-NSe">
+                                <rect key="frame" x="16" y="20" width="568" height="50"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="25"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" text="Local Notifications Example would like to send you local notifications. Will you accept?" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Hc2-2i-PWB">
+                                <rect key="frame" x="16" y="78" width="568" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="q2h-ol-3v5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DMP-pK-Sle">
+                                <rect key="frame" x="277" y="176" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="uwZ-JF-aJf"/>
+                                </constraints>
+                                <state key="normal" title="Yes">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="requestPermissions:" destination="p4O-RS-bfD" eventType="touchUpInside" id="qZ9-2j-o00"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bPY-HQ-zdL">
+                                <rect key="frame" x="225" y="214" width="150" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="jQm-Hn-ebA"/>
+                                </constraints>
+                                <state key="normal" title="No, not right now">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="qiQ-VI-Zjo" kind="unwind" identifier="UnwindToFirstViewController" unwindAction="prepareForUnwind:" id="kkd-Ti-yR0"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bPY-HQ-zdL" firstAttribute="centerX" secondItem="DMP-pK-Sle" secondAttribute="centerX" id="2Vk-8i-SJR"/>
+                            <constraint firstItem="bPY-HQ-zdL" firstAttribute="top" secondItem="Hc2-2i-PWB" secondAttribute="bottom" constant="8" symbolic="YES" id="4JJ-yR-MYu"/>
+                            <constraint firstItem="Hc2-2i-PWB" firstAttribute="leading" secondItem="AcN-nX-NSe" secondAttribute="leading" id="5Xc-C8-72b"/>
+                            <constraint firstItem="AcN-nX-NSe" firstAttribute="trailing" secondItem="5O3-tS-EaL" secondAttribute="trailingMargin" id="ARz-e2-ZW1"/>
+                            <constraint firstItem="AcN-nX-NSe" firstAttribute="leading" secondItem="5O3-tS-EaL" secondAttribute="leadingMargin" id="K0X-Yv-08i"/>
+                            <constraint firstItem="BAU-fE-F4O" firstAttribute="top" secondItem="AcN-nX-NSe" secondAttribute="bottom" constant="530" id="LiH-eI-rEq"/>
+                            <constraint firstItem="bPY-HQ-zdL" firstAttribute="centerX" secondItem="Hc2-2i-PWB" secondAttribute="centerX" id="MNf-re-pmc"/>
+                            <constraint firstItem="Hc2-2i-PWB" firstAttribute="trailing" secondItem="AcN-nX-NSe" secondAttribute="trailing" id="OQS-Ee-EX3"/>
+                            <constraint firstItem="AcN-nX-NSe" firstAttribute="top" secondItem="49v-D9-Z1m" secondAttribute="bottom" id="PwE-Ub-oKe"/>
+                            <constraint firstItem="Hc2-2i-PWB" firstAttribute="top" secondItem="AcN-nX-NSe" secondAttribute="bottom" constant="8" symbolic="YES" id="TSn-3G-3ok"/>
+                            <constraint firstItem="AcN-nX-NSe" firstAttribute="top" secondItem="49v-D9-Z1m" secondAttribute="bottom" id="Wpb-yk-kCV"/>
+                            <constraint firstItem="bPY-HQ-zdL" firstAttribute="top" secondItem="DMP-pK-Sle" secondAttribute="bottom" constant="8" symbolic="YES" id="kbO-N4-Rgp"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="LiH-eI-rEq"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jBH-V5-wPB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="819" y="136"/>
+        </scene>
+    </scenes>
+</document>
