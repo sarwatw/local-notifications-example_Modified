@@ -1,3 +1,5 @@
 language: objective-c
 xcode_project: LocalNotificationsExample.xcodeproj
 xcode_scheme: LocalNotificationsExample
+osx_image: xcode6.4
+xcode_sdk: iphonesimulator
