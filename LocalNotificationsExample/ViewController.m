@@ -33,6 +33,10 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    // Call to super implementation
+    
+    [super viewWillAppear:animated];
+    
     // Update the UITextView showing which permissions have been given
     
     [self updatePermissionsView];
@@ -77,6 +81,7 @@
     localNotification.alertBody = @"Here's a test notification!";
     localNotification.timeZone = [NSTimeZone defaultTimeZone];
     localNotification.applicationIconBadgeNumber = 1;
+    localNotification.soundName = UILocalNotificationDefaultSoundName;
     [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
     
     // Display an alert to inform user that a notification has been scheduled
