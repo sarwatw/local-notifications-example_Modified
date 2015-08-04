@@ -1,4 +1,4 @@
-# Local Notifications on iOS Sample Code
+# Local Notifications on iOS
 
 [![Build Status](https://travis-ci.org/rwbutler/local-notifications-example.svg)](https://travis-ci.org/rwbutler/local-notifications-example)
 
