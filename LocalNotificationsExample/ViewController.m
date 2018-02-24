@@ -221,4 +221,14 @@
 {
 }
 
+- (IBAction)OpenSettingsButtonClicked:(id)sender {
+    
+    if (&UIApplicationOpenSettingsURLString != NULL) {
+        NSURL *url = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
+        [[UIApplication sharedApplication] openURL:url];
+    }
+    else {
+        // Present some dialog telling the user to open the settings app.
+    }
+}
 @end

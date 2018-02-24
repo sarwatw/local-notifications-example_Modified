@@ -1,9 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="13F1077" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeueLights.ttc">
+            <string>HelveticaNeue-Light</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -14,44 +24,36 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iMM-oo-ofK">
-                                <rect key="frame" x="152" y="415" width="297" height="30"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Permissions:" translatesAutoresizingMaskIntoConstraints="NO" id="flZ-PF-vCi">
+                                <rect key="frame" x="16" y="78" width="568" height="292"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vCr-I9-1Ib">
+                                <rect key="frame" x="68" y="610" width="175" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Open Settings for my app"/>
+                                <connections>
+                                    <action selector="OpenSettingsButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="L1y-nk-UnD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iMM-oo-ofK">
+                                <rect key="frame" x="7" y="40" width="297" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Schedule a notification in five seconds">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="notificationButtonTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ypt-cZ-8qw"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Local Notifications Example" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pF1-5s-VU3">
-                                <rect key="frame" x="16" y="20" width="568" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="akF-Pl-daC"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="25"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" editable="NO" text="Permissions:" translatesAutoresizingMaskIntoConstraints="NO" id="flZ-PF-vCi">
-                                <rect key="frame" x="16" y="78" width="568" height="292"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="pF1-5s-VU3" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="HW8-tb-BpR"/>
-                            <constraint firstItem="pF1-5s-VU3" firstAttribute="leading" secondItem="flZ-PF-vCi" secondAttribute="leading" id="I2d-TH-5ct"/>
-                            <constraint firstItem="pF1-5s-VU3" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="a2o-xZ-dLL"/>
-                            <constraint firstItem="pF1-5s-VU3" firstAttribute="trailing" secondItem="flZ-PF-vCi" secondAttribute="trailing" id="b70-k5-0Z7"/>
-                            <constraint firstItem="flZ-PF-vCi" firstAttribute="top" secondItem="pF1-5s-VU3" secondAttribute="bottom" constant="8" symbolic="YES" id="ba2-DF-pIw"/>
-                            <constraint firstItem="pF1-5s-VU3" firstAttribute="centerX" secondItem="iMM-oo-ofK" secondAttribute="centerX" id="esc-wh-V9Z"/>
-                            <constraint firstItem="pF1-5s-VU3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="xS7-YE-A8e"/>
-                        </constraints>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
                         <outlet property="permissionsView" destination="flZ-PF-vCi" id="EHN-q4-jcp"/>
@@ -72,7 +74,7 @@
                         <viewControllerLayoutGuide type="bottom" id="BAU-fE-F4O"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="5O3-tS-EaL">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Permissions Request" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AcN-nX-NSe">
@@ -83,7 +85,7 @@
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" text="Local Notifications Example would like to send you local notifications. Will you accept?" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Hc2-2i-PWB">
                                 <rect key="frame" x="16" y="78" width="568" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="q2h-ol-3v5"/>
                                 </constraints>
@@ -96,7 +98,7 @@
                                     <constraint firstAttribute="width" constant="46" id="uwZ-JF-aJf"/>
                                 </constraints>
                                 <state key="normal" title="Yes">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="requestPermissions:" destination="p4O-RS-bfD" eventType="touchUpInside" id="qZ9-2j-o00"/>
@@ -108,14 +110,14 @@
                                     <constraint firstAttribute="width" constant="150" id="jQm-Hn-ebA"/>
                                 </constraints>
                                 <state key="normal" title="No, not right now">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="qiQ-VI-Zjo" kind="unwind" identifier="UnwindToFirstViewController" unwindAction="prepareForUnwind:" id="kkd-Ti-yR0"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="bPY-HQ-zdL" firstAttribute="centerX" secondItem="DMP-pK-Sle" secondAttribute="centerX" id="2Vk-8i-SJR"/>
                             <constraint firstItem="bPY-HQ-zdL" firstAttribute="top" secondItem="Hc2-2i-PWB" secondAttribute="bottom" constant="8" symbolic="YES" id="4JJ-yR-MYu"/>
